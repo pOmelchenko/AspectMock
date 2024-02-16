@@ -54,9 +54,9 @@ class Kernel extends AspectKernel
     /**
      * Includes file and injects aspect pointcuts into int
      */
-    public function loadFile(string $file)
+    public function loadFile(string $file): void
     {
-        include FilterInjectorTransformer::rewrite($file);
+        include_once FilterInjectorTransformer::rewrite($file);
     }
 
     protected function registerTransformers(): array
